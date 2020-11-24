@@ -31,7 +31,7 @@ cd ~/Library/Application\ Support/Code/User && { curl -O https://raw.githubuserc
 ############################################## Brew
 echo "\n${info}Installing brew and applications${nocolor}\n"
 
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
 # non-casks
 brew install git
