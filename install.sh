@@ -23,9 +23,9 @@ sudo mkdir -p /usr/local/n
 sudo chown -R $(whoami) /usr/local/n
 
 # Settings downloads
-curl -o ~/.zshrc https://raw.githubusercontent.com/anmead/mac-install-script/master/.zshrc
-cd ~/Library/Application\ Support/Code/User && { curl -O https://raw.githubusercontent.com/anmead/mac-install-script/master/settings.json ; cd -; }
-cd ~/Library/Application\ Support/Code/User && { curl -O https://raw.githubusercontent.com/anmead/mac-install-script/master/keybindings.json ; cd -; }
+curl -o ~/.zshrc https://raw.githubusercontent.com/austin-meadows/mac-install-script/main/.zshrc
+cd ~/Library/Application\ Support/Code/User && { curl -O https://raw.githubusercontent.com/austin-meadows/mac-install-script/main/settings.json ; cd -; }
+cd ~/Library/Application\ Support/Code/User && { curl -O https://raw.githubusercontent.com/austin-meadows/mac-install-script/main/keybindings.json ; cd -; }
 
 
 ############################################## Brew
