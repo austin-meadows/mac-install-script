@@ -123,6 +123,7 @@ code --install-extension dbaeumer.vscode-eslint
 code --install-extension equinusocio.vsc-material-theme
 code --install-extension equinusocio.vsc-material-theme-icons
 code --install-extension esbenp.prettier-vscode
+code --install-extension gruntfuggly.activitusbar
 code --install-extension iocave.customize-ui
 code --install-extension octref.vetur
 code --install-extension richie5um2.vscode-sort-json

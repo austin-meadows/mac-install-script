@@ -13,6 +13,4 @@ function random_emoji {
 }
 PROMPT="$(random_emoji)  "
 
-. /usr/local/etc/profile.d/z.sh
-
 unsetopt PROMPT_SP
