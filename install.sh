@@ -19,14 +19,11 @@ echo "\n${info}Creating folders/files and copying over settings${nocolor}\n"
 # File/Folder creation
 mkdir -p ~/Git
 mkdir -p ~/Library/Application\ Support/Code/User/
-sudo mkdir -p /usr/local/n
-sudo chown -R $(whoami) /usr/local/n
 
 # Settings downloads
 curl -o ~/.zshrc https://raw.githubusercontent.com/austin-meadows/mac-install-script/main/.zshrc
 cd ~/Library/Application\ Support/Code/User && { curl -O https://raw.githubusercontent.com/austin-meadows/mac-install-script/main/settings.json ; cd -; }
 cd ~/Library/Application\ Support/Code/User && { curl -O https://raw.githubusercontent.com/austin-meadows/mac-install-script/main/keybindings.json ; cd -; }
-
 
 ############################################## Brew
 echo "\n${info}Installing brew and applications${nocolor}\n"
@@ -34,9 +31,7 @@ echo "\n${info}Installing brew and applications${nocolor}\n"
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
 # non-casks
-brew install git
-brew install n
-brew install pwgen
+brew install node
 brew install yarn
 # casks
 brew cask install cleanmymac

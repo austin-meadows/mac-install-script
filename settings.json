@@ -1,4 +1,7 @@
 {
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "activitusbar.toggleSidebar": false,
   "activitusbar.views": [
     {
@@ -31,6 +34,7 @@
   "editor.fontLigatures": true,
   "editor.formatOnPaste": false,
   "editor.formatOnSave": true,
+  "editor.formatOnType": false,
   "editor.glyphMargin": false,
   "editor.letterSpacing": -0.5,
   "editor.lineHeight": 16,
@@ -38,6 +42,7 @@
   "editor.renderLineHighlight": "gutter",
   "editor.tabSize": 2,
   "eslint.packageManager": "yarn",
+  "explorer.confirmDragAndDrop": false,
   "explorer.sortOrder": "type",
   "extensions.ignoreRecommendations": true,
   "extensions.showRecommendationsOnlyOnDemand": true,
@@ -83,7 +88,6 @@
   "vetur.format.defaultFormatter.js": "prettier-eslint",
   "vetur.format.defaultFormatter.scss": "prettier",
   "vetur.validation.template": true,
-  "vsicons.presets.hideExplorerArrows": true,
   "window.restoreWindows": "none",
   "window.titleBarStyle": "native",
   "workbench.activityBar.visible": false,
