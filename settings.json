@@ -2,6 +2,12 @@
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "activitusbar.toggleSidebar": false,
   "activitusbar.views": [
     {
@@ -44,8 +50,6 @@
   "eslint.packageManager": "yarn",
   "explorer.confirmDragAndDrop": false,
   "explorer.sortOrder": "type",
-  "extensions.ignoreRecommendations": true,
-  "extensions.showRecommendationsOnlyOnDemand": true,
   "files.enableTrash": false,
   "files.exclude": {
     "**/.DS_Store": true,
@@ -62,6 +66,7 @@
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
   "files.trimTrailingWhitespace": true,
+  "git.autofetch": true,
   "git.confirmSync": false,
   "git.enableSmartCommit": true,
   "git.pullTags": true,

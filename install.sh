@@ -26,19 +26,19 @@ cd ~/Library/Application\ Support/Code/User && { curl -O https://raw.githubuserc
 cd ~/Library/Application\ Support/Code/User && { curl -O https://raw.githubusercontent.com/austin-meadows/mac-install-script/main/keybindings.json ; cd -; }
 
 ############################################## Brew
-echo "\n${info}Installing brew and applications${nocolor}\n"
+echo "\n${info}Installing brew and applications (disabled for now.)${nocolor}\n"
 
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+# /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-# non-casks
-brew install node
-brew install yarn
-# casks
-brew cask install cleanmymac
-brew cask install discord
-brew cask install homebrew/cask-fonts/font-fira-code
-brew cask install slack
-brew cask install visual-studio-code
+# # non-casks
+# brew install node
+# brew install yarn
+# # casks
+# brew cask install cleanmymac
+# brew cask install discord
+# brew cask install homebrew/cask-fonts/font-fira-code
+# brew cask install slack
+# brew cask install visual-studio-code
 
 
 ############################################## System
@@ -63,9 +63,6 @@ defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
 /usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
 /usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
-
-# Prevent Safari from opening ‘safe’ files automatically after downloading
-defaults write com.apple.Safari AutoOpenSafeDownloads -bool false
 
 # Use plain text mode for new TextEdit documents
 defaults write com.apple.TextEdit RichText -int 0
@@ -104,26 +101,26 @@ killall Finder
 killall SystemUIServer
 
 ############################################## Special
-echo "\n${info}Doing a few extra things${nocolor}\n"
+echo "\n${info}Doing a few extra things (disabled for now)${nocolor}\n"
 # Update zsh
-brew install zsh && \
-sudo sh -c 'echo $(brew --prefix)/bin/zsh >> /etc/shells' && \
-chsh -s $(brew --prefix)/bin/zsh
+# brew install zsh && \
+# sudo sh -c 'echo $(brew --prefix)/bin/zsh >> /etc/shells' && \
+# chsh -s $(brew --prefix)/bin/zsh
 
-echo "\n${info}${bold}Please take a moment to open / allow VSCode to run.${normal}\t${blue}↩ ${nocolor}\n"
-read
+# echo "\n${info}${bold}Please take a moment to open / allow VSCode to run.${normal}\t${blue}↩ ${nocolor}\n"
+# read
 
-# VSCode extensions
-code --install-extension dbaeumer.vscode-eslint
-code --install-extension equinusocio.vsc-material-theme
-code --install-extension equinusocio.vsc-material-theme-icons
-code --install-extension esbenp.prettier-vscode
-code --install-extension gruntfuggly.activitusbar
-code --install-extension iocave.customize-ui
-code --install-extension octref.vetur
-code --install-extension richie5um2.vscode-sort-json
+# # VSCode extensions
+# code --install-extension dbaeumer.vscode-eslint
+# code --install-extension equinusocio.vsc-material-theme
+# code --install-extension equinusocio.vsc-material-theme-icons
+# code --install-extension esbenp.prettier-vscode
+# code --install-extension gruntfuggly.activitusbar
+# code --install-extension iocave.customize-ui
+# code --install-extension octref.vetur
+# code --install-extension richie5um2.vscode-sort-json
 
 
 ############################################## Cleanup
-brew cleanup --prune=0
+# brew cleanup --prune=0
 echo "\n${info}Done!${nocolor}\n"
