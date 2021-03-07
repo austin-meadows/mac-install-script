@@ -36,6 +36,7 @@
   "editor.codeActionsOnSave": {
     "source.fixAll": true
   },
+  "editor.detectIndentation": false,
   "editor.fontFamily": "Fira Code",
   "editor.fontLigatures": true,
   "editor.formatOnPaste": false,
@@ -93,12 +94,13 @@
   "vetur.format.defaultFormatter.js": "prettier-eslint",
   "vetur.format.defaultFormatter.scss": "prettier",
   "vetur.validation.template": true,
+  "vsicons.presets.hideExplorerArrows": true,
   "window.restoreWindows": "none",
   "window.titleBarStyle": "native",
   "workbench.activityBar.visible": false,
-  "workbench.colorTheme": "Material Theme",
+  "workbench.colorTheme": "GitHub Light",
   "workbench.editor.closeOnFileDelete": true,
-  "workbench.iconTheme": "eq-material-theme-icons",
+  "workbench.iconTheme": "vscode-icons",
   "workbench.settings.editor": "json",
   "workbench.startupEditor": "none"
 }

@@ -14,6 +14,10 @@ code='\033[37;48;5;255m'
 echo "${info}Press ${blue}↩${info} to continue or ${red}⌃C${normal}${info} to quit.${nocolor}\n"
 read
 
+############################################## Prerequisites
+echo "\n${info}Installing prerequisites${nocolor}\n"
+xcode-select --install
+
 ############################################## File Operations
 echo "\n${info}Creating folders/files and copying over settings${nocolor}\n"
 # File/Folder creation
@@ -28,18 +32,15 @@ cd ~/Library/Application\ Support/Code/User && { curl -O https://raw.githubuserc
 ############################################## Brew
 echo "\n${info}Installing brew and applications (disabled for now.)${nocolor}\n"
 
-# /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-# # non-casks
-# brew install node
-# brew install yarn
-# # casks
-# brew cask install cleanmymac
-# brew cask install discord
-# brew cask install homebrew/cask-fonts/font-fira-code
-# brew cask install slack
-# brew cask install visual-studio-code
-
+brew install cleanmymac
+brew install discord
+brew install homebrew/cask-fonts/font-fira-code
+brew install node
+brew install slack
+brew install visual-studio-code
+brew install zoom
 
 ############################################## System
 echo "\n${info}Changing system settings${nocolor}\n"
@@ -103,24 +104,27 @@ killall SystemUIServer
 ############################################## Special
 echo "\n${info}Doing a few extra things (disabled for now)${nocolor}\n"
 # Update zsh
-# brew install zsh && \
-# sudo sh -c 'echo $(brew --prefix)/bin/zsh >> /etc/shells' && \
-# chsh -s $(brew --prefix)/bin/zsh
+brew install zsh && \
+sudo sh -c 'echo $(brew --prefix)/bin/zsh >> /etc/shells' && \
+chsh -s $(brew --prefix)/bin/zsh
 
-# echo "\n${info}${bold}Please take a moment to open / allow VSCode to run.${normal}\t${blue}↩ ${nocolor}\n"
-# read
+echo "\n${info}${bold}Please take a moment to open / allow VSCode to run.${normal}\t${blue}↩ ${nocolor}\n"
+read
 
-# # VSCode extensions
-# code --install-extension dbaeumer.vscode-eslint
-# code --install-extension equinusocio.vsc-material-theme
-# code --install-extension equinusocio.vsc-material-theme-icons
-# code --install-extension esbenp.prettier-vscode
-# code --install-extension gruntfuggly.activitusbar
-# code --install-extension iocave.customize-ui
-# code --install-extension octref.vetur
-# code --install-extension richie5um2.vscode-sort-json
+# VSCode extensions
+code --install-extension dbaeumer.vscode-eslint
+code --install-extension esbenp.prettier-vscode
+code --install-extension github.github-vscode-theme
+code --install-extension gruntfuggly.activitusbar
+code --install-extension iocave.customize-ui
+code --install-extension octref.vetur
+code --install-extension richie5um2.vscode-sort-json
+code --install-extension vscode-icons-team.vscode-icons
 
+# Git
+git config --global user.name "Austin Meadows"
+git config --global user.email "austin-meadows@users.noreply.github.com"
 
 ############################################## Cleanup
-# brew cleanup --prune=0
+brew cleanup --prune=0
 echo "\n${info}Done!${nocolor}\n"

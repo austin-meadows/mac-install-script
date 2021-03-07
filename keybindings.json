@@ -2,6 +2,6 @@
 [
   {
     "key": "shift+cmd+g",
-    "command": "workbench.view.scm",
-  },
+    "command": "workbench.view.scm"
+  }
 ]
