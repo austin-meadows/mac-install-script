@@ -30,17 +30,15 @@ cd ~/Library/Application\ Support/Code/User && { curl -O https://raw.githubuserc
 cd ~/Library/Application\ Support/Code/User && { curl -O https://raw.githubusercontent.com/austin-meadows/mac-install-script/main/keybindings.json ; cd -; }
 
 ############################################## Brew
-echo "\n${info}Installing brew and applications (disabled for now.)${nocolor}\n"
+echo "\n${info}Installing brew and applications${nocolor}\n"
 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 brew install cleanmymac
-brew install discord
 brew install homebrew/cask-fonts/font-fira-code
 brew install node
 brew install slack
 brew install visual-studio-code
-brew install zoom
 
 ############################################## System
 echo "\n${info}Changing system settings${nocolor}\n"
@@ -102,11 +100,7 @@ killall Finder
 killall SystemUIServer
 
 ############################################## Special
-echo "\n${info}Doing a few extra things (disabled for now)${nocolor}\n"
-# Update zsh
-brew install zsh && \
-sudo sh -c 'echo $(brew --prefix)/bin/zsh >> /etc/shells' && \
-chsh -s $(brew --prefix)/bin/zsh
+echo "\n${info}Doing a few extra things${nocolor}\n"
 
 echo "\n${info}${bold}Please take a moment to open / allow VSCode to run.${normal}\t${blue}↩ ${nocolor}\n"
 read
