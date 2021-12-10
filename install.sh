@@ -35,6 +35,8 @@ brew install adguard
 brew install cleanmymac
 brew install git
 brew install homebrew/cask-fonts/font-fira-code
+brew install homebrew/cask-versions/discord-ptb
+brew install slack
 brew install visual-studio-code
 brew install volta
 
@@ -59,6 +61,7 @@ git config --global user.email "austin-meadows@users.noreply.github.com"
 
 ############################################## Cleanup
 brew cleanup --prune=0
+
 # Kill to refresh
 killall Dock
 killall Finder
