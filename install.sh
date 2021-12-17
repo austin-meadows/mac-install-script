@@ -20,10 +20,8 @@ xcode-select --install
 
 ############################################## File Operations
 echo "\n${info}Creating folders/files and copying over settings${nocolor}\n"
-# File/Folder creation
 mkdir -p ~/Developer
 
-# Settings downloads
 curl -o ~/.zshrc https://raw.githubusercontent.com/austin-meadows/mac-install-script/main/.zshrc
 
 ############################################## Brew
@@ -33,6 +31,7 @@ echo "\n${info}Installing brew and applications${nocolor}\n"
 
 brew install adguard
 brew install cleanmymac
+brew install fish
 brew install git
 brew install homebrew/cask-fonts/font-fira-code
 brew install homebrew/cask-versions/discord-ptb
@@ -41,7 +40,7 @@ brew install visual-studio-code
 brew install volta
 
 ############################################## System
-echo "\n${info}Changing system settings${nocolor}\n"
+echo "\n${info}Changing settings${nocolor}\n"
 
 # Change screenshot dir
 defaults write com.apple.screencapture location $HOME/Pictures
@@ -52,17 +51,15 @@ defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 # .DS_STORE for network drives?
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 
-############################################## Special
-echo "\n${info}Doing a few extra things${nocolor}\n"
-
-# Git
 git config --global user.name "Austin Meadows"
 git config --global user.email "austin-meadows@users.noreply.github.com"
+
+sudo bash -c 'echo /opt/homebrew/bin/fish >> /etc/shells'
+chsh -s /opt/homebrew/bin/fish
 
 ############################################## Cleanup
 brew cleanup --prune=0
 
-# Kill to refresh
 killall Dock
 killall Finder
 killall SystemUIServer
