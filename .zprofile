@@ -1,8 +1,7 @@
 eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(fnm env --use-on-cd)"
 
-alias dev='f(){cd "$HOME/Developer/$1"};f'
-alias p="pnpm"
-
-EDITOR=code
-SHELL_SESSIONS_DISABLE=1
+export SHELL_SESSIONS_DISABLE=1
+export PNPM_HOME="$HOME/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+export EDITOR=code
