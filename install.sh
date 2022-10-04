@@ -25,6 +25,9 @@ mkdir -p ~/Developer
 curl -o ~/.zprofile https://raw.githubusercontent.com/austin-meadows/mac-install-script/main/.zprofile
 curl -o ~/.zshrc https://raw.githubusercontent.com/austin-meadows/mac-install-script/main/.zshrc
 
+. ~/.zprofile
+. ~/.zshrc
+
 ############################################## Brew
 echo "\n${info}Installing brew and applications${nocolor}\n"
 
