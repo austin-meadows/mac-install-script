@@ -34,7 +34,6 @@ echo "\n${info}Installing brew and applications${nocolor}\n"
 export HOMEBREW_INSTALL_FROM_API=1
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-brew install font-cascadia-code
 brew install git
 brew install visual-studio-code
 brew install zsh
