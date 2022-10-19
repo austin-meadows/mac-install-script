@@ -9,6 +9,6 @@ set -gx HOMEBREW_INSTALL_FROM_API 1
 set -gx PNPM_HOME "$HOME/Library/pnpm"
 set -gx PATH "$PNPM_HOME" $PATH
 
-alias dev="cddev $1"
-alias p="pnpm"
-alias px="pnpx"
+alias cdd "cd $HOME/Developer"
+alias p pnpm
+alias px pnpx
