@@ -22,7 +22,11 @@ xcode-select --install
 echo "\n${info}Creating folders/files and copying over settings${nocolor}\n"
 mkdir -p $HOME/Developer
 
-curl -o $HOME/.config/fish/config.fish https://raw.githubusercontent.com/austin-meadows/mac-install-script/main/config.fish
+curl -o ~/.zprofile https://raw.githubusercontent.com/austin-meadows/mac-install-script/main/.zprofile
+curl -o ~/.zshrc https://raw.githubusercontent.com/austin-meadows/mac-install-script/main/.zshrc
+
+. ~/.zprofile
+. ~/.zshrc
 
 ############################################## Brew
 echo "\n${info}Installing brew and applications${nocolor}\n"
@@ -30,9 +34,9 @@ echo "\n${info}Installing brew and applications${nocolor}\n"
 export HOMEBREW_INSTALL_FROM_API=1
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-brew install fish
 brew install git
 brew install visual-studio-code
+brew install zsh
 
 ############################################## System
 echo "\n${info}Changing settings${nocolor}\n"
@@ -52,9 +56,8 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 git config --global user.name "Austin Meadows"
 git config --global user.email "austin@slowp.ke"
 
-sudo bash -c 'echo $(which fish) >> /etc/shells'
-chsh -s $(which fish)
-
+sudo bash -c 'echo /opt/homebrew/bin/zsh >> /etc/shells'
+chsh -s /opt/homebrew/bin/zsh
 ############################################## Cleanup
 brew cleanup --prune=all
 
