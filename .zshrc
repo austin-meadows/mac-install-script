@@ -1,23 +1,25 @@
-FPATH="/opt/homebrew/share/zsh/site-functions:$HOME/.zsh/typewritten:${FPATH}"
-HISTSIZE=0
+export HOMEBREW_AUTOREMOVE=1
+export HOMEBREW_INSTALL_FROM_API=1
+export HOMEBREW_NO_COMPAT=1
+export HOMEBREW_NO_ENV_HINTS=1
+export PNPM_HOME="$HOME/.pnpm"
+export PATH="$PNPM_HOME:$PATH"
+HISTSIZE=10
 SAVEHIST=0
 
-autoload -Uz compinit
-compinit
-autoload -U promptinit; promptinit
-prompt typewritten
+eval "$(/opt/homebrew/bin/brew shellenv)"
+eval "$(fnm env --use-on-cd)"
 
-local cddev() {
-  cd "$HOME/Developer/$1"
-}
-local _cddev() {
-  _files -/ -W "$HOME/Developer"
-}
-compdef _cddev cddev
+if type brew &>/dev/null
+then
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+  autoload -Uz compinit
+  compinit -i
+fi
 
-alias cdd="cddev $1"
+alias bu="brew update && brew upgrade && brew cleanup"
+alias bf="sudo chgrp -R brew $(brew --prefix)/*;sudo chmod -R g+w $(brew --prefix)/*"
 alias p="pnpm"
-alias px="pnpx"
-alias npm="pnpm"
-alias npx="pnpx"
-alias n="fnm"
+alias px="pnpm exec"
+
+cd $HOME/Developer
